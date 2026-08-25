@@ -1,0 +1,319 @@
+/* ============ Fonts ============ */
+@font-face {
+  font-family: "Metropolis";
+  src: url("../fonts/Metropolis-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Metropolis";
+  src: url("../fonts/Metropolis-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Metropolis";
+  src: url("../fonts/Metropolis-SemiBold.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Metropolis";
+  src: url("../fonts/Metropolis-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Metropolis";
+  src: url("../fonts/Metropolis-ExtraBold.woff2") format("woff2");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ============ Tokens ============ */
+:root {
+  --ck-orange: #ff6d1d;
+  --ck-blue: #0036da;
+  --text-black: #262626;
+  --text-inactive: #5c5c5c;
+  --stroke-grey: #d9e3ec;
+  --browser-white: #fcfcfd;
+  --artboard-gray: #f5f7f9;
+  --bk-ruby-red: #da2760;
+}
+
+/* ============ Reset ============ */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+img { display: block; }
+a { text-decoration: none; color: inherit; }
+button { font: inherit; border: none; background: none; cursor: pointer; }
+
+html { background: #fff; }
+body {
+  font-family: "Metropolis", -apple-system, "Segoe UI", Roboto, sans-serif;
+  color: var(--text-black);
+  background: #fff;
+  min-width: 1728px;
+}
+
+.canvas { width: 1728px; margin: 0 auto; }
+
+/* ============ Header ============ */
+.site-header {
+  width: 1728px;
+  margin: 0 auto;
+  background: #fff;
+  border-bottom: 1px solid var(--stroke-grey);
+  box-shadow: 0 4px 2px rgba(0, 0, 0, 0.04);
+  padding: 16px 72px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  z-index: 10;
+}
+.site-header .header-left {
+  display: flex;
+  align-items: center;
+  gap: 80px;
+  width: 817px;
+}
+.site-header .logo-group {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+.site-header .hamburger { width: 22px; height: 15px; }
+.site-header .hamburger img { width: 100%; height: 100%; }
+.site-header .ck-logo { width: 107.127px; height: 24.722px; }
+.site-header .search-bar {
+  position: relative;
+  width: 584px;
+  height: 50px;
+  background: #f4f4f4;
+  border-radius: 12px;
+}
+.site-header .search-bar .search-icon {
+  position: absolute;
+  left: 24.13px;
+  top: 13px;
+  width: 24px;
+  height: 24px;
+}
+.site-header .search-bar .placeholder {
+  position: absolute;
+  left: 72.13px;
+  top: 17px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 16px;
+  color: #898a8d;
+  white-space: nowrap;
+}
+.site-header .header-right {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+.site-header .wallet {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 8px 0;
+}
+.site-header .wallet .wallet-icon { width: 24px; height: 24px; }
+.site-header .wallet .amount {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-black);
+  white-space: nowrap;
+}
+.site-header .divider {
+  width: 1px;
+  height: 29px;
+  background: var(--text-black);
+  border-radius: 12px;
+}
+.site-header .nav-item {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 20px;
+  color: var(--text-black);
+  white-space: nowrap;
+}
+.site-header .profile {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.site-header .profile img { width: 24px; height: 24px; }
+
+/* ============ Shared: section heading row ============ */
+.section-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+.section-head h2 {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 24px;
+  letter-spacing: -0.72px;
+  color: var(--text-black);
+}
+.text-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border-radius: 40px;
+}
+.text-link span {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  letter-spacing: -0.48px;
+  color: var(--ck-blue);
+  white-space: nowrap;
+}
+.text-link img { width: 24px; height: 24px; }
+
+/* ============ Shared: brand tile (Most popular brands / category grid) ============ */
+.tile {
+  position: relative;
+  width: 244px;
+  height: 316px;
+  background: #fff;
+  border: 1.5px solid #eee;
+  border-radius: 24px;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.12);
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.tile .panel {
+  position: absolute;
+  left: 10.5px;
+  right: 10.5px;
+  top: 10.5px;
+  height: 206px;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1.2px solid rgba(0, 0, 0, 0.04);
+}
+.tile .panel .glow-a {
+  position: absolute;
+  left: -54px;
+  top: -25px;
+  width: 340px;
+  height: 366px;
+}
+.tile .panel .glow-b {
+  position: absolute;
+  left: 2px;
+  top: 70px;
+  width: 228px;
+  height: 228px;
+}
+.tile .panel .grad {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: -1px;
+  width: 234.6px;
+  pointer-events: none;
+}
+.tile .logo-chip {
+  position: absolute;
+  left: calc(50% - 3.4px);
+  transform: translateX(-50%);
+  top: 14.9px;
+  width: 135.2px;
+  height: 46.5px;
+  background: #fff;
+  mix-blend-mode: multiply;
+  border-radius: 12.7px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 8.4px;
+}
+.tile .cb {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 232.5px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  align-items: center;
+  text-align: center;
+  white-space: nowrap;
+}
+.tile .cb .pct {
+  font-size: 28px;
+  font-weight: 800;
+  letter-spacing: -0.56px;
+  color: var(--ck-blue);
+}
+.tile .cb .lbl {
+  font-size: 12px;
+  font-weight: 600;
+  color: rgba(99, 99, 99, 0.44);
+}
+.tile .product { position: absolute; overflow: hidden; }
+.tile .product img { width: 100%; height: 100%; object-fit: cover; }
+.tile .product img.crop { position: absolute; max-width: none; object-fit: fill; }
+.logo-chip .lg-crop { position: relative; overflow: hidden; }
+.logo-chip .lg-crop img { position: absolute; left: 0; width: 100%; max-width: none; }
+
+/* hover band (shown on hover — matches the Flipkart hover state in the design) */
+.tile .hover-band {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1.2px;
+  background: #fff;
+  padding: 12px 27.8px;
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+.tile .hover-band span {
+  font-size: 16px;
+  font-weight: 500;
+  color: #01ab4b;
+  text-align: center;
+  white-space: nowrap;
+}
+.tile.has-hover:hover .hover-band { display: flex; }
+.tile.has-hover:hover .cb { top: 228.5px; }
+.tile.has-hover:hover .panel .hb-shift { transform: translateY(-14px); }
+
+/* tile flavour panels */
+.panel--croma { background: #e9f0f5; border-color: #000; }
+.panel--dotkey {
+  background: linear-gradient(to bottom, #ebf3df 15.74%, rgba(235, 243, 223, 0.44));
+  border-color: #e8efdd;
+}
+.panel--nykaa { background: #ffeff5; }
+.panel--foxtale { background: #f2e0c4; }
+.panel--mamaearth { background: #e3eee7; }
+.panel--ajio { background: #f2f4f8; }
+.panel--myntra { background: #ffedf4; border-color: #000; }
+.panel--derma { background: #d2faf8; border-color: rgba(0, 0, 0, 0.02); }
+.panel--amazon { background: #fdefb7; border-color: rgba(0, 0, 0, 0.02); }
+.panel--caffeine {
+  background: linear-gradient(to bottom, #ebf3df 15.74%, rgba(235, 243, 223, 0.66));
+  border-color: #e8efdd;
+}
+.panel--lavie { background: #ffeff5; border-color: #000; }
+.panel--flipkart {
+  background: linear-gradient(to bottom, #ebf3df 15.74%, rgba(235, 243, 223, 0.24));
+  border-color: #e8efdd;
+}

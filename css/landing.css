@@ -1,0 +1,862 @@
+/* ================= Landing page ================= */
+
+/* ---- Banners ---- */
+.banners {
+  margin-top: 32px;
+  padding-left: 40px;
+  width: 1728px;
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.banners::-webkit-scrollbar { display: none; }
+
+.banner {
+  position: relative;
+  width: 534px;
+  height: 248px;
+  border-radius: 16px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+/* status pill (Live for Prime Users / Live now / Sale live...) */
+.banner .live-pill {
+  position: absolute;
+  top: 16px;
+  height: 23px;
+  border-radius: 42.7px;
+  border: 0.575px solid rgba(255, 255, 255, 0.35);
+  background: linear-gradient(164deg, rgba(0, 0, 0, 0.18) 10.9%, rgba(255, 255, 255, 0.014) 96.4%);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 0 11px;
+}
+.banner .live-pill .dot { width: 9px; height: 9px; flex-shrink: 0; }
+.banner .live-pill span {
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 16px;
+  color: #fff;
+  white-space: nowrap;
+}
+
+/* CK cashback strip at banner bottom */
+.banner .ck-strip {
+  position: absolute;
+  left: 24px;
+  top: 176px;
+  width: 286px;
+  height: 32px;
+}
+.banner .ck-strip .strip-bg {
+  position: absolute;
+  left: 4px;
+  top: 0;
+  width: 276px;
+  height: 32px;
+  border-radius: 5px 0 0 5px;
+  backdrop-filter: blur(6px);
+  background: linear-gradient(to right, rgba(133, 132, 132, 0.2), rgba(198, 198, 198, 0));
+}
+.banner .ck-strip.light .strip-bg {
+  background: linear-gradient(to right, rgba(252, 252, 252, 0.2), rgba(228, 227, 227, 0));
+}
+.banner .ck-strip .ck-box {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 32px;
+  height: 32px;
+  background: var(--ck-blue);
+  border-radius: 6px;
+}
+.banner .ck-strip .ck-mark {
+  position: absolute;
+  left: 8px;
+  top: 9px;
+  display: flex;
+  gap: 1.5px;
+}
+.banner .ck-strip .ck-mark img:first-child { width: 7.2px; height: 15px; }
+.banner .ck-strip .ck-mark img:last-child { width: 8.1px; height: 14.7px; }
+.banner .ck-strip .strip-text {
+  position: absolute;
+  left: 40px;
+  top: 4px;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  color: #fff;
+  white-space: nowrap;
+}
+.banner .ck-strip.light .strip-text { color: var(--text-black); }
+.banner .ck-strip .pct-badge {
+  position: absolute;
+  left: 198px;
+  top: 7px;
+  width: 11.5px;
+  height: 16px;
+}
+.banner .ck-strip .pct-badge img { width: 100%; height: 100%; }
+
+/* banner headline block */
+.banner .headline {
+  position: absolute;
+  left: 24px;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 24px;
+  letter-spacing: -0.72px;
+  color: #fff;
+  white-space: nowrap;
+}
+.banner .subline {
+  position: absolute;
+  left: 24px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  color: #fff;
+  white-space: nowrap;
+}
+
+/* --- Myntra banner --- */
+.banner--myntra { background: #454790; }
+.banner--myntra .grad-overlay {
+  position: absolute;
+  left: 0;
+  top: 57px;
+  width: 637.8px;
+  height: 193px;
+}
+.banner--myntra .product {
+  position: absolute;
+  left: 228px;
+  top: 39px;
+  width: 350px;
+  height: 470.4px;
+}
+.banner--myntra .product img { width: 100%; height: 100%; object-fit: cover; }
+.banner--myntra .brand-logo {
+  position: absolute;
+  left: 24px;
+  top: 22.2px;
+  width: 93.4px;
+  height: 34.6px;
+}
+.banner--myntra .brand-logo img { width: 100%; height: 100%; object-fit: contain; }
+.banner--myntra .fest-logo {
+  position: absolute;
+  left: 125px;
+  top: 16px;
+  width: 47px;
+  height: 47px;
+}
+.banner--myntra .fest-logo img { width: 100%; height: 100%; object-fit: cover; }
+.banner--myntra .live-pill { left: 365px; width: 145px; border-color: #20237b; }
+
+/* --- IndusInd banner --- */
+.banner--induslnd { background: #1c1c1c; }
+.banner--induslnd .texture {
+  position: absolute;
+  left: 3px;
+  top: -80px;
+  width: 548px;
+  height: 548px;
+  opacity: 0.6;
+}
+.banner--induslnd .texture img { width: 100%; height: 100%; object-fit: cover; }
+.banner--induslnd .glow {
+  position: absolute;
+  left: -307px;
+  top: -224px;
+  width: 736px;
+  height: 736px;
+}
+.banner--induslnd .card-img {
+  position: absolute;
+  left: 282px;
+  top: 51px;
+  width: 261.7px;
+  height: 163.9px;
+  opacity: 0.9;
+  transform: rotate(5.87deg);
+}
+.banner--induslnd .card-img img { width: 100%; height: 100%; object-fit: cover; }
+.banner--induslnd .brand-logo {
+  position: absolute;
+  left: 24px;
+  top: 16px;
+  width: 110.9px;
+  height: 12px;
+}
+.banner--induslnd .brand-logo img { width: 100%; height: 100%; object-fit: cover; }
+.banner--induslnd .gold-chip {
+  position: absolute;
+  left: 24px;
+  top: 81px;
+  width: 170px;
+  height: 23px;
+  border: 1px solid #fee495;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  padding-left: 12px;
+}
+.banner--induslnd .gold-chip span {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 16px;
+  background: linear-gradient(90deg, #ffe390 10.2%, #ffc304 10.2%, #ffb901 90.2%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  white-space: nowrap;
+}
+.banner--induslnd .live-pill { left: 431px; width: 79px; border-color: #f0f0f0; }
+
+/* --- Ajio banner --- */
+.banner--ajio { background: #243046; }
+.banner--ajio .product-blur {
+  position: absolute;
+  left: 273px;
+  top: 50px;
+  width: 220px;
+  height: 295.7px;
+  filter: blur(46px);
+  opacity: 0.7;
+}
+.banner--ajio .product {
+  position: absolute;
+  left: 273px;
+  top: 50px;
+  width: 220px;
+  height: 295.7px;
+}
+.banner--ajio .product img,
+.banner--ajio .product-blur img { width: 100%; height: 100%; object-fit: contain; }
+.banner--ajio .brand-logo {
+  position: absolute;
+  left: 24px;
+  top: 16px;
+  width: 73px;
+  height: 21px;
+}
+.banner--ajio .brand-logo img { width: 100%; height: 100%; object-fit: cover; }
+.banner--ajio .live-pill { left: 347px; width: 163px; border-color: #2f328d; }
+
+/* --- mCaffeine banner --- */
+.banner--mcaf { background: #e2c9bc; }
+.banner--mcaf .wave {
+  position: absolute;
+  left: 207px;
+  top: 140px;
+  width: 327px;
+  height: 111px;
+}
+.banner--mcaf .wave img { width: 100%; height: 100%; object-fit: cover; object-position: left; }
+.banner--mcaf .product {
+  position: absolute;
+  left: 288px;
+  top: 32px;
+  width: 223px;
+  height: 234.9px;
+}
+.banner--mcaf .product img { width: 100%; height: 100%; object-fit: cover; }
+.banner--mcaf .brand-logo {
+  position: absolute;
+  left: 24px;
+  top: 16px;
+  width: 93.8px;
+  height: 32px;
+}
+.banner--mcaf .brand-logo img { width: 100%; height: 100%; object-fit: cover; }
+.banner--mcaf .headline,
+.banner--mcaf .subline { color: var(--text-black); }
+
+/* --- Apple banner --- */
+.banner--apple {
+  background: linear-gradient(112deg, #1c0539 0%, #061a39 101.8%);
+}
+.banner--apple .glow-a {
+  position: absolute;
+  left: 278px;
+  top: 22px;
+  width: 263px;
+  height: 263px;
+}
+.banner--apple .glow-b {
+  position: absolute;
+  left: 318px;
+  top: 62px;
+  width: 182px;
+  height: 182px;
+}
+.banner--apple .product {
+  position: absolute;
+  left: 257px;
+  top: 53px;
+  width: 274px;
+  height: 143.6px;
+}
+.banner--apple .product img { width: 100%; height: 100%; object-fit: cover; }
+.banner--apple .apple-logo {
+  position: absolute;
+  left: 17.4px;
+  top: 9.4px;
+  width: 40.5px;
+  height: 40.5px;
+  background: #fff;
+  -webkit-mask-image: url("../assets/l/imgRectangle6974283.png");
+  mask-image: url("../assets/l/imgRectangle6974283.png");
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: 6.57px 6.57px;
+  mask-position: 6.57px 6.57px;
+  -webkit-mask-size: 23px 27.3px;
+  mask-size: 23px 27.3px;
+}
+.banner--apple .offer-chip {
+  position: absolute;
+  left: 24px;
+  top: 81px;
+  width: 193px;
+  height: 23px;
+  border: 1px solid #fff;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  padding-left: 11px;
+}
+.banner--apple .offer-chip span {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 16px;
+  color: #fff;
+  white-space: nowrap;
+}
+
+/* ---- Sections spacing ---- */
+.section-head--categories { margin: 64px 40px 0; width: 1648px; }
+.top-categories {
+  margin-top: 32px;
+  padding-left: 40px;
+  width: 1728px;
+  height: 196px;
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.top-categories::-webkit-scrollbar { display: none; }
+.cat-item {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+  flex-shrink: 0;
+}
+.cat-item .cat-icon {
+  position: relative;
+  width: 136px;
+  height: 136px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.cat-item .cat-icon .ring {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+.cat-item .cat-icon .ph { position: absolute; }
+.cat-item .cat-icon .ph img { width: 100%; height: 100%; object-fit: cover; }
+.cat-item .cat-label {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 22px;
+  color: var(--text-inactive);
+  text-align: center;
+  white-space: nowrap;
+}
+
+/* ---- Flash Deal ---- */
+.flash-deal {
+  position: relative;
+  margin-top: 64px;
+  width: 1728px;
+  height: 712px;
+  overflow: hidden;
+}
+.flash-deal .fd-bg {
+  position: absolute;
+  left: 0;
+  top: -1.8%;
+  width: 100%;
+  height: 239.7%;
+  object-fit: cover;
+}
+.flash-deal .fd-sparkle {
+  position: absolute;
+  left: 50%;
+  top: -73.6px;
+  transform: translateX(-50%) scaleY(-1);
+  width: 1737.8px;
+  height: 991.1px;
+  mix-blend-mode: color-dodge;
+  opacity: 0.49;
+  object-fit: cover;
+}
+.flash-deal .fd-glow {
+  position: absolute;
+  left: 740px;
+  top: 85px;
+  width: 1153px;
+  height: 1153px;
+}
+.flash-deal .fd-title {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 34px;
+  white-space: nowrap;
+  font-size: 56px;
+  font-weight: 800;
+  line-height: 40px;
+  letter-spacing: -1.68px;
+  color: #ffd600;
+  text-align: center;
+}
+.flash-deal .fd-title::before {
+  content: "FLASH DEAL";
+  position: absolute;
+  inset: 0;
+  color: rgba(255, 214, 0, 0.52);
+  filter: blur(4.45px);
+}
+.flash-deal .fd-timer {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 111px;
+  background: #fff;
+  border-radius: 4.8px;
+  padding: 8px 16px;
+  display: flex;
+  align-items: center;
+  gap: 9.6px;
+}
+.flash-deal .fd-timer img { width: 24px; height: 24px; }
+.flash-deal .fd-timer span {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 19.2px;
+  color: #51606a;
+  white-space: nowrap;
+}
+.flash-deal .fd-cards {
+  position: absolute;
+  left: 0;
+  top: 199px;
+  width: 1728px;
+  padding-left: 40px;
+  display: flex;
+  gap: 24px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.flash-deal .fd-cards::-webkit-scrollbar { display: none; }
+.flash-deal .fd-viewall {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 604px;
+  width: 364px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1.5px solid rgba(244, 244, 244, 0.42);
+  border-radius: 6px;
+  backdrop-filter: blur(1px);
+  background: linear-gradient(172deg, rgba(114, 113, 113, 0.44) 4.4%, rgba(255, 255, 255, 0.1) 76.1%);
+  box-shadow: 0 4px 24px rgba(255, 255, 255, 0.2);
+  font-size: 18px;
+  font-weight: 600;
+  color: #fff;
+}
+
+/* flash deal card */
+.fd-card {
+  position: relative;
+  width: 453px;
+  height: 357px;
+  flex-shrink: 0;
+}
+.fd-card .fd-card-body {
+  position: absolute;
+  left: 0;
+  top: 57px;
+  width: 453px;
+  height: 300px;
+  background: #fff;
+  border-radius: 24px;
+}
+.fd-card .logo-chip {
+  position: absolute;
+  left: 16px;
+  top: 16px;
+  width: 108px;
+  height: 60px;
+  background: #fff;
+  border: 1.5px solid var(--artboard-gray);
+  border-radius: 12px;
+}
+.fd-card .logo-chip img { position: absolute; object-fit: cover; }
+.fd-card .fd-product {
+  position: absolute;
+  overflow: hidden;
+  box-shadow: 5.6px 5.6px 45px rgba(0, 0, 0, 0.32);
+}
+.fd-card .fd-product img { width: 100%; height: 100%; object-fit: cover; }
+.fd-card .fd-product img.crop { position: absolute; max-width: none; object-fit: fill; }
+.fd-card .off-badge {
+  position: absolute;
+  left: 382.5px;
+  top: 181.5px;
+  width: 70.5px;
+  height: 57px;
+}
+.fd-card .off-badge img { position: absolute; inset: 0; width: 100%; height: 100%; }
+.fd-card .off-badge .t1 {
+  position: absolute;
+  left: 18px;
+  top: 10.5px;
+  font-size: 18px;
+  font-weight: 700;
+  color: #fff;
+}
+.fd-card .off-badge .t2 {
+  position: absolute;
+  left: 22.5px;
+  top: 28.5px;
+  font-size: 18px;
+  font-weight: 700;
+  color: #fff;
+}
+.fd-card .fd-content {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 453px;
+  padding: 24px 15px 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: flex-start;
+}
+.fd-card .fd-content .fd-title-sm {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 30px;
+  color: var(--text-black);
+}
+.fd-card .fd-content .fd-sub {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 24px;
+  color: var(--text-black);
+  margin-top: 6px;
+}
+.fd-card .fd-content .fd-divider {
+  width: 211.5px;
+  height: 1.5px;
+  background: #ececec;
+}
+.fd-card .fd-price-row {
+  display: flex;
+  align-items: flex-end;
+  gap: 18px;
+  width: 100%;
+}
+.fd-card .fd-prices {
+  flex: 1;
+  display: flex;
+  align-items: flex-end;
+  gap: 6px;
+}
+.fd-card .fd-prices .now {
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 36px;
+  letter-spacing: -0.9px;
+  color: var(--text-black);
+}
+.fd-card .fd-prices .was {
+  font-size: 21px;
+  font-weight: 500;
+  line-height: 33px;
+  color: var(--text-black);
+  text-decoration: line-through;
+}
+.fd-card .fd-btn {
+  background: var(--ck-blue);
+  border-radius: 8px;
+  padding: 3px 24px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 24px;
+  color: #fff;
+  white-space: nowrap;
+}
+.fd-card .floor-shadow {
+  position: absolute;
+  left: 235px;
+  top: 218px;
+  width: 183px;
+  height: 50px;
+}
+
+/* Axis flash card specifics */
+.fd-card .axis-logo-note {
+  position: absolute;
+  left: 150px;
+  top: 30px;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 16.5px;
+  color: var(--text-black);
+}
+.fd-card .axis-vsep {
+  position: absolute;
+  left: 136px;
+  top: 15px;
+  width: 1.5px;
+  height: 64.5px;
+  background: #ececec;
+}
+.fd-card .mini-logos {
+  display: flex;
+  gap: 10.5px;
+  margin-top: 6px;
+}
+.fd-card .mini-logos img {
+  width: 31.5px;
+  height: 31.5px;
+  opacity: 0.8;
+}
+.fd-card .fd-prices .rewards-note {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 36px;
+}
+
+/* ---- TSP rows (Nykaa / Buykaro) ---- */
+.section-head--tsp { margin: 40px 40px 0; width: 1648px; }
+.tsp-cards {
+  margin-top: 32px;
+  padding-left: 40px;
+  width: 1728px;
+  display: flex;
+  gap: 24px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.tsp-cards::-webkit-scrollbar { display: none; }
+
+.tsp-card {
+  position: relative;
+  width: 453px;
+  height: 300px;
+  border: 1.5px solid rgba(244, 244, 244, 0.47);
+  border-radius: 24px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.tsp-card--nykaa { background: linear-gradient(123deg, #cb50a0 1.76%, #bb80b2 98.55%); }
+.tsp-card--bk { background: linear-gradient(123deg, #3d93bb 1.76%, #5052bc 98.55%); }
+.tsp-card .glow-tr { position: absolute; left: 70.5px; top: -202.5px; width: 583.5px; height: 583.5px; }
+.tsp-card .glow-bl { position: absolute; left: -262.5px; top: -139.5px; width: 697.5px; height: 697.5px; }
+.tsp-card .logo-chip {
+  position: absolute;
+  left: 14.5px;
+  top: 14.5px;
+  width: 108px;
+  height: 60px;
+  background: #fff;
+  border: 1.5px solid var(--artboard-gray);
+  border-radius: 12px;
+  z-index: 2;
+}
+.tsp-card .logo-chip img { position: absolute; }
+.tsp-card .ribbon {
+  position: absolute;
+  right: 0;
+  top: 0;
+  background: #e62325;
+  border-radius: 0 0 0 12px;
+  padding: 9px 24px;
+  z-index: 3;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #fff;
+  white-space: nowrap;
+}
+.tsp-card .side-img { position: absolute; z-index: 1; }
+.tsp-card .side-img img { width: 100%; height: 100%; object-fit: cover; }
+.tsp-card .tsp-content {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 24px 16px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  z-index: 2;
+}
+.tsp-card .tsp-offer {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 30px;
+  color: #fff;
+}
+.tsp-card .tsp-offer-sub {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 24px;
+  color: #fff;
+}
+.tsp-card .cb-chip {
+  position: relative;
+  margin-top: 12px;
+  width: 306px;
+  height: 42px;
+}
+.tsp-card .cb-chip .chip-bg {
+  position: absolute;
+  inset: 0;
+  border-radius: 7.5px 0 0 7.5px;
+  backdrop-filter: blur(9px);
+  background: linear-gradient(to right, rgba(203, 203, 203, 0.58), rgba(198, 198, 198, 0));
+}
+.tsp-card .cb-chip .ck-box {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 42px;
+  height: 42px;
+  background: var(--ck-blue);
+  border-radius: 7.5px;
+}
+.tsp-card .cb-chip .ck-mark {
+  position: absolute;
+  left: 10.5px;
+  top: 12px;
+  display: flex;
+  gap: 1.9px;
+}
+.tsp-card .cb-chip .ck-mark img:first-child { width: 8.9px; height: 18.5px; }
+.tsp-card .cb-chip .ck-mark img:last-child { width: 10px; height: 18.2px; }
+.tsp-card .cb-chip .chip-text {
+  position: absolute;
+  left: 54px;
+  top: 6px;
+  font-size: 21px;
+  font-weight: 600;
+  line-height: 30px;
+  color: #fff;
+  white-space: nowrap;
+}
+.tsp-card .cb-chip .pct-badge {
+  position: absolute;
+  left: 273px;
+  top: 11px;
+  width: 16.5px;
+  height: 22px;
+}
+.tsp-card .cb-chip .pct-badge img { width: 100%; height: 100%; }
+.tsp-card .tsp-bottom {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  width: 421px;
+}
+.tsp-card .bonus {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 30px;
+  color: #fff;
+}
+.tsp-card .bonus.hidden { visibility: hidden; }
+.tsp-card .tsp-btn {
+  background: #fff;
+  height: 42px;
+  padding: 0 24px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--ck-blue);
+  white-space: nowrap;
+}
+
+/* BK product title (3 lines, lh27) */
+.tsp-card--bk .tsp-offer { line-height: 27px; }
+.tsp-card .tsp-divider {
+  width: 211.5px;
+  height: 1.5px;
+  background: rgba(255, 255, 255, 0.5);
+}
+.tsp-card .bk-prices {
+  flex: 1;
+  display: flex;
+  align-items: flex-end;
+  gap: 6px;
+}
+.tsp-card .bk-prices .now {
+  font-size: 27px;
+  font-weight: 700;
+  line-height: 36px;
+  letter-spacing: -0.81px;
+  color: #fff;
+}
+.tsp-card .bk-prices .was {
+  font-size: 21px;
+  font-weight: 500;
+  line-height: 33px;
+  color: #fff;
+  text-decoration: line-through;
+}
+
+/* BuyKaro vector logo */
+.bk-logo {
+  position: absolute;
+  left: 26.5px;
+  top: 34px;
+  width: 84px;
+  height: 19.77px;
+  z-index: 2;
+}
+.bk-logo img { position: absolute; }
+
+/* ---- Most popular brands ---- */
+.section-head--brands { margin: 113px auto 0; width: 1615px; }
+.brand-grid {
+  width: 1584px;
+  margin: 29px auto 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 29px 24px;
+  padding-bottom: 189px;
+}

@@ -1,0 +1,10 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="bluetooth">
+<mask id="mask0_0_274" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="16" height="16">
+<rect id="Bounding box" width="16" height="16" fill="#D9D9D9"/>
+</mask>
+<g mask="url(#mask0_0_274)">
+<path id="bluetooth_2" d="M7.33333 14.6667V9.6L4.26667 12.6667L3.33333 11.7333L7.06667 8L3.33333 4.26667L4.26667 3.33333L7.33333 6.4V1.33333H8L11.8 5.13333L8.93333 8L11.8 10.8667L8 14.6667H7.33333ZM8.66667 6.4L9.93333 5.13333L8.66667 3.9V6.4ZM8.66667 12.1L9.93333 10.8667L8.66667 9.6V12.1Z" fill="#1C1B1F"/>
+</g>
+</g>
+</svg>

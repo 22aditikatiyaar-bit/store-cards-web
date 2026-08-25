@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Storepage Tiles — Variations</title>
+<link rel="stylesheet" href="css/base.css?v=1786920825">
+<style>
+  body { min-width: 0; background: #fcfcfd; }
+  .chooser {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 48px 24px;
+  }
+  .chooser .ck-logo { height: 24px; margin-bottom: 48px; }
+  .chooser h1 {
+    font-size: 32px;
+    font-weight: 800;
+    letter-spacing: -0.96px;
+    color: var(--text-black);
+  }
+  .chooser .sub {
+    margin-top: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--text-inactive);
+  }
+  .variations {
+    margin-top: 40px;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .var-card {
+    width: 300px;
+    background: #fff;
+    border: 1.5px solid #eee;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.08);
+    display: block;
+    transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+  }
+  .var-card.live:hover {
+    transform: translateY(-4px);
+    border-color: #c9d6ff;
+    box-shadow: 0 12px 24px rgba(0, 54, 218, 0.1);
+  }
+  .var-card.soon { cursor: not-allowed; }
+
+  /* minimal wireframe thumbnail */
+  .mini-thumb {
+    height: 110px;
+    border-radius: 12px;
+    background: var(--artboard-gray);
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    overflow: hidden;
+  }
+  .mini-thumb .bar {
+    height: 34px;
+    border-radius: 6px;
+    background: linear-gradient(100deg, #454790, #5052bc);
+  }
+  .mini-thumb .dots { display: flex; gap: 8px; }
+  .mini-thumb .dots span {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: #dde4ee;
+  }
+  .mini-thumb .tiles { display: flex; gap: 8px; }
+  .mini-thumb .tiles span {
+    flex: 1;
+    height: 26px;
+    border-radius: 6px;
+    background: #fff;
+    border: 1px solid #e7ecf3;
+  }
+  .var-card.soon .mini-thumb .bar { background: #d4d7de; }
+  .var-card.soon .mini-thumb .dots span,
+  .var-card.soon .mini-thumb .tiles span { background: #e8eaee; border-color: #e2e4e9; }
+
+  .var-card .meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 16px;
+  }
+  .var-card .name {
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: -0.36px;
+    color: var(--text-black);
+  }
+  .var-card .cta {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--ck-blue);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .var-card.soon .name { color: var(--text-inactive); }
+  .var-card.soon .cta { color: #a5a5a5; }
+  .badge {
+    display: inline-block;
+    margin-bottom: 12px;
+    padding: 4px 12px;
+    border-radius: 40px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    color: #fff;
+    background: var(--ck-blue);
+  }
+  .var-card.soon .badge { background: #b9bdc7; }
+  .mini-thumb .tiles--offer span { border-bottom: 3px solid #01ab4b; }
+</style>
+</head>
+<body>
+<main class="chooser">
+  <img class="ck-logo" src="assets/l/imgFrame2.svg" alt="CashKaro">
+  <h1>Storepage Tiles</h1>
+  <p class="sub">Choose a variation to preview</p>
+
+  <div class="variations">
+    <a class="var-card live" href="variation-1.html">
+      <span class="badge">Live</span>
+      <div class="mini-thumb">
+        <div class="bar"></div>
+        <div class="dots"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+        <div class="tiles"><span></span><span></span><span></span><span></span></div>
+      </div>
+      <div class="meta">
+        <span class="name">Variation 1</span>
+        <span class="cta">View <img src="assets/l/imgAction2.svg" alt="" style="width:18px;height:18px;"></span>
+      </div>
+    </a>
+
+    <a class="var-card live" href="variation-2.html">
+      <span class="badge">Live</span>
+      <div class="mini-thumb">
+        <div class="bar"></div>
+        <div class="dots"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+        <div class="tiles tiles--offer"><span></span><span></span><span></span><span></span></div>
+      </div>
+      <div class="meta">
+        <span class="name">Variation 2</span>
+        <span class="cta">View <img src="assets/l/imgAction2.svg" alt="" style="width:18px;height:18px;"></span>
+      </div>
+    </a>
+  </div>
+</main>
+</body>
+</html>
