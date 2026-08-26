@@ -197,10 +197,14 @@
   var pill = document.getElementById("pill");
   var sidebar = document.querySelector(".sidebar");
   var current = document.querySelector(".sb-row.active");
+  var pageTitle = document.querySelector(".page-title");
   var tabsDefault = document.querySelector(".tab-group--default");
   var tabsFashion = document.querySelector(".tab-group--fashion");
   var switchToken = 0;
 
+  function updateTitle(row) {
+    pageTitle.textContent = row.querySelector(".sb-label").textContent;
+  }
   function updateFilters(cat) {
     var fashion = cat === "fashion";
     tabsDefault.style.display = fashion ? "none" : "flex";
@@ -231,6 +235,7 @@
     setTimeout(function () { row.classList.remove("pop"); }, 420);
     movePill(row);
     updateFilters(row.dataset.cat);
+    updateTitle(row);
     current = row;
     stagger(fromGrid);
     fromGrid.classList.remove("grid-in");
@@ -260,6 +265,7 @@
   pill.classList.add("sb-in");
   movePill(current);
   updateFilters(current.dataset.cat);
+  updateTitle(current);
   window.addEventListener("load", function () { movePill(current); });
 })();
 </script>
