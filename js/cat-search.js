@@ -140,8 +140,77 @@
     if (e.key === "Escape") clearSearch(true);
   });
 
+  /* ---- tappable sort tabs (Swiggy-style pop + grid reshuffle) ---- */
+  var groups = document.querySelectorAll(".tab-group");
+
+  function sortGrid(mode) {
+    var grid = document.querySelector(".grid-active");
+    if (!grid) return;
+    var cards = Array.prototype.slice.call(grid.children);
+    for (var i = 0; i < cards.length; i++) {
+      if (cards[i].dataset.origIdx === undefined) cards[i].dataset.origIdx = i;
+    }
+    cards.sort(function (a, b) {
+      if (mode === "az") return nameFor(a).localeCompare(nameFor(b));
+      return a.dataset.origIdx - b.dataset.origIdx;
+    });
+    var shown = 0;
+    for (var j = 0; j < cards.length; j++) {
+      grid.appendChild(cards[j]);
+      if (!cards[j].classList.contains("search-hide")) {
+        cards[j].style.setProperty("--i", shown++);
+      }
+    }
+    grid.classList.remove("search-pop");
+    void grid.offsetWidth; // restart the stagger animation
+    grid.classList.add("search-pop");
+  }
+
+  function bindTab(group, tab) {
+    tab.addEventListener("click", function () {
+      tab.classList.remove("tab-pop");
+      void tab.offsetWidth;
+      tab.classList.add("tab-pop");
+      if (tab.classList.contains("tab--filters")) return;
+      if (tab.classList.contains("active")) return;
+      var prev = group.querySelector(".tab.active");
+      if (prev) { prev.classList.remove("active"); prev.classList.add("inactive"); }
+      tab.classList.remove("inactive");
+      tab.classList.add("active");
+      sortGrid(tab.textContent.trim().toLowerCase() === "a-z" ? "az" : "orig");
+    });
+  }
+  for (var gi = 0; gi < groups.length; gi++) {
+    var groupTabs = groups[gi].querySelectorAll(".tab");
+    for (var ti = 0; ti < groupTabs.length; ti++) bindTab(groups[gi], groupTabs[ti]);
+  }
+
+  /* restore original order and default tabs (used on category switch) */
+  function resetSort() {
+    var grids = document.querySelectorAll(".tile-grid, .cc-grid");
+    for (var g = 0; g < grids.length; g++) {
+      var cards = Array.prototype.slice.call(grids[g].children);
+      if (!cards.length || cards[0].dataset.origIdx === undefined) continue;
+      cards.sort(function (a, b) { return a.dataset.origIdx - b.dataset.origIdx; });
+      for (var c = 0; c < cards.length; c++) grids[g].appendChild(cards[c]);
+    }
+    for (var gr = 0; gr < groups.length; gr++) {
+      var tabs = groups[gr].querySelectorAll(".tab:not(.tab--filters)");
+      for (var t = 0; t < tabs.length; t++) {
+        tabs[t].classList.remove("active");
+        tabs[t].classList.add("inactive");
+      }
+      if (tabs.length) {
+        tabs[0].classList.remove("inactive");
+        tabs[0].classList.add("active");
+      }
+    }
+  }
+
   /* reset silently when switching category via the sidebar */
   var rows = document.querySelectorAll(".sb-row");
+  var activeRow = document.querySelector(".sb-row.active");
+  var lastCat = activeRow ? activeRow.dataset.cat : "";
   function resetAll() {
     if (!input.value && !lastQuery) return;
     clearTimeout(debounce);
@@ -157,7 +226,16 @@
       }
     }
   }
+  function bindRow(row) {
+    row.addEventListener("click", function () {
+      if (row.dataset.cat === lastCat) return;
+      lastCat = row.dataset.cat;
+      resetAll();
+      // restore order after the grid-switch animation has hidden the old grid
+      setTimeout(resetSort, 350);
+    });
+  }
   for (var r = 0; r < rows.length; r++) {
-    rows[r].addEventListener("click", resetAll);
+    bindRow(rows[r]);
   }
 })();
