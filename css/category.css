@@ -162,11 +162,11 @@
 
 /* Fashion-only tags (All / Tops / Footwear / Party wear / Filters) */
 .tab-group--fashion { width: auto; }
-.tab-group--fashion .tab.inactive { gap: 8px; }
-.tab-group--fashion .tab--filters { flex: none; gap: 12px; }
+.tab-group--fashion .tab { padding: 10px 20px; gap: 6px; }
+.tab-group--fashion .tab--filters { flex: none; gap: 8px; }
 .tab-ic {
-  width: 24px;
-  height: 24px;
+  width: 20px;
+  height: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
