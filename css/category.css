@@ -160,6 +160,19 @@
 .tab .filter-ic { width: 17.7px; height: 17.7px; }
 .tab--filters { flex: 1; gap: 12px; }
 
+/* Fashion-only tags (All / Tops / Footwear / Party wear / Filters) */
+.tab-group--fashion { width: auto; }
+.tab-group--fashion .tab.inactive { gap: 8px; }
+.tab-group--fashion .tab--filters { flex: none; gap: 12px; }
+.tab-ic {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
 .cat-search {
   width: 368px;
   background: #fff;
